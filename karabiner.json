@@ -25,8 +25,8 @@
                   {
                     "identifiers": [
                       {
-                        "product_id": 0,
-                        "vendor_id": 0
+                        "product_id": 50895,
+                        "vendor_id": 12951
                       }
                     ],
                     "type": "device_if"
@@ -51,15 +51,15 @@
             ]
           },
           {
-            "description": "UNIVERSAL open Warp",
+            "description": "PLANCK open Warp",
             "manipulators": [
               {
                 "conditions": [
                   {
                     "identifiers": [
                       {
-                        "product_id": 0,
-                        "vendor_id": 0
+                        "product_id": 50895,
+                        "vendor_id": 12951
                       }
                     ],
                     "type": "device_if"
@@ -82,15 +82,15 @@
             ]
           },
           {
-            "description": "UNIVERSAL open Brave",
+            "description": "PLANCK open Brave",
             "manipulators": [
               {
                 "conditions": [
                   {
                     "identifiers": [
                       {
-                        "product_id": 0,
-                        "vendor_id": 0
+                        "product_id": 50895,
+                        "vendor_id": 12951
                       }
                     ],
                     "type": "device_if"
@@ -113,15 +113,15 @@
             ]
           },
           {
-            "description": "UNIVERSAL open Notes",
+            "description": "PLANCK open Notes",
             "manipulators": [
               {
                 "conditions": [
                   {
                     "identifiers": [
                       {
-                        "product_id": 0,
-                        "vendor_id": 0
+                        "product_id": 50895,
+                        "vendor_id": 12951
                       }
                     ],
                     "type": "device_if"
@@ -144,15 +144,15 @@
             ]
           },
           {
-            "description": "UNIVERSAL open VS Code",
+            "description": "PLANCK open VS Code",
             "manipulators": [
               {
                 "conditions": [
                   {
                     "identifiers": [
                       {
-                        "product_id": 0,
-                        "vendor_id": 0
+                        "product_id": 50895,
+                        "vendor_id": 12951
                       }
                     ],
                     "type": "device_if"
@@ -175,15 +175,15 @@
             ]
           },
           {
-            "description": "UNIVERSAL open XCode",
+            "description": "PLANCK open XCode",
             "manipulators": [
               {
                 "conditions": [
                   {
                     "identifiers": [
                       {
-                        "product_id": 0,
-                        "vendor_id": 0
+                        "product_id": 50895,
+                        "vendor_id": 12951
                       }
                     ],
                     "type": "device_if"
@@ -342,6 +342,37 @@
                 "to": [
                   {
                     "key_code": "c",
+                    "modifiers": ["left_command"]
+                  }
+                ],
+                "type": "basic"
+              }
+            ]
+          },
+          {
+            "description": "PLANCK bold",
+            "manipulators": [
+              {
+                "conditions": [
+                  {
+                    "identifiers": [
+                      {
+                        "product_id": 50895,
+                        "vendor_id": 12951
+                      }
+                    ],
+                    "type": "device_if"
+                  }
+                ],
+                "from": {
+                  "key_code": "b",
+                  "modifiers": {
+                    "mandatory": ["left_control"]
+                  }
+                },
+                "to": [
+                  {
+                    "key_code": "b",
                     "modifiers": ["left_command"]
                   }
                 ],
@@ -567,7 +598,7 @@
             ]
           },
           {
-            "description": "PLANCK mimic alt+tab",
+            "description": "PLANCK command K",
             "manipulators": [
               {
                 "conditions": [
@@ -582,14 +613,14 @@
                   }
                 ],
                 "from": {
-                  "key_code": "tab",
+                  "key_code": "k",
                   "modifiers": {
                     "mandatory": ["left_option"]
                   }
                 },
                 "to": [
                   {
-                    "key_code": "tab",
+                    "key_code": "k",
                     "modifiers": ["left_command"]
                   }
                 ],
