@@ -1,24 +1,10 @@
 {
-  "global": {
-    "ask_for_confirmation_before_quitting": true,
-    "check_for_updates_on_startup": true,
-    "show_in_menu_bar": true,
-    "show_profile_name_in_menu_bar": false,
-    "unsafe_ui": false
-  },
   "profiles": [
     {
       "complex_modifications": {
-        "parameters": {
-          "basic.simultaneous_threshold_milliseconds": 50,
-          "basic.to_delayed_action_delay_milliseconds": 500,
-          "basic.to_if_alone_timeout_milliseconds": 1000,
-          "basic.to_if_held_down_threshold_milliseconds": 500,
-          "mouse_motion_to_scroll.speed": 100
-        },
         "rules": [
           {
-            "description": "PLANCK Escape → Hyper Key (⌃⌥⇧⌘) (Escape if alone)",
+            "description": "PLANCK + MOONLANDER Escape → Hyper Key (⌃⌥⇧⌘) (Escape if alone)",
             "manipulators": [
               {
                 "conditions": [
@@ -27,31 +13,56 @@
                       {
                         "product_id": 50895,
                         "vendor_id": 12951
+                      },
+                      {
+                        "product_id": 6505,
+                        "vendor_id": 12951
                       }
                     ],
                     "type": "device_if"
                   }
                 ],
-                "from": {
-                  "key_code": "escape"
-                },
+                "from": { "key_code": "escape" },
                 "to": [
                   {
                     "key_code": "left_shift",
                     "modifiers": ["left_command", "left_control", "left_option"]
                   }
                 ],
-                "to_if_alone": [
-                  {
-                    "key_code": "escape"
-                  }
-                ],
+                "to_if_alone": [{ "key_code": "escape" }],
                 "type": "basic"
               }
             ]
           },
           {
-            "description": "PLANCK open Warp",
+            "description": "Mac Escape → Hyper Key (⌃⌥⇧⌘) (Escape if alone)",
+            "manipulators": [
+              {
+                "conditions": [
+                  {
+                    "identifiers": [
+                      {
+                        "product_id": 0,
+                        "vendor_id": 0
+                      }
+                    ],
+                    "type": "device_if"
+                  }
+                ],
+                "from": { "key_code": "escape" },
+                "to": [
+                  {
+                    "key_code": "left_shift",
+                    "modifiers": ["left_command", "left_control", "left_option"]
+                  }
+                ],
+                "to_if_alone": [{ "key_code": "escape" }],
+                "type": "basic"
+              }
+            ]
+          },
+          {
+            "description": "PLANCK + MOONLANDER open iTerm2",
             "manipulators": [
               {
                 "conditions": [
@@ -60,29 +71,56 @@
                       {
                         "product_id": 50895,
                         "vendor_id": 12951
+                      },
+                      {
+                        "product_id": 6505,
+                        "vendor_id": 12951
                       }
                     ],
                     "type": "device_if"
                   }
                 ],
                 "from": {
-                  "key_code": "p",
+                  "key_code": "l",
                   "modifiers": {
                     "mandatory": ["left_control", "left_shift"],
                     "optional": ["left_command", "left_option"]
                   }
                 },
-                "to": [
-                  {
-                    "shell_command": "open -a Warp.app"
-                  }
-                ],
+                "to": [{ "shell_command": "open -b com.mitchellh.ghostty" }],
                 "type": "basic"
               }
             ]
           },
           {
-            "description": "PLANCK Warp command palette",
+            "description": "Mac open Terminal",
+            "manipulators": [
+              {
+                "conditions": [
+                  {
+                    "identifiers": [
+                      {
+                        "product_id": 0,
+                        "vendor_id": 0
+                      }
+                    ],
+                    "type": "device_if"
+                  }
+                ],
+                "from": {
+                  "key_code": "l",
+                  "modifiers": {
+                    "mandatory": ["left_control", "left_shift"],
+                    "optional": ["left_command", "left_option"]
+                  }
+                },
+                "to": [{ "shell_command": "open -b com.mitchellh.ghostty" }],
+                "type": "basic"
+              }
+            ]
+          },
+          {
+            "description": "PLANCK + MOONLANDER Warp command palette",
             "manipulators": [
               {
                 "conditions": [
@@ -91,6 +129,10 @@
                       {
                         "product_id": 50895,
                         "vendor_id": 12951
+                      },
+                      {
+                        "product_id": 6505,
+                        "vendor_id": 12951
                       }
                     ],
                     "type": "device_if"
@@ -98,9 +140,7 @@
                 ],
                 "from": {
                   "key_code": "p",
-                  "modifiers": {
-                    "mandatory": ["left_option"]
-                  }
+                  "modifiers": { "mandatory": ["left_option"] }
                 },
                 "to": [
                   {
@@ -113,7 +153,7 @@
             ]
           },
           {
-            "description": "PLANCK Xcode toggle file explorer",
+            "description": "PLANCK + MOONLANDER Command + N",
             "manipulators": [
               {
                 "conditions": [
@@ -122,20 +162,22 @@
                       {
                         "product_id": 50895,
                         "vendor_id": 12951
+                      },
+                      {
+                        "product_id": 6505,
+                        "vendor_id": 12951
                       }
                     ],
                     "type": "device_if"
                   }
                 ],
                 "from": {
-                  "key_code": "b",
-                  "modifiers": {
-                    "mandatory": ["left_option"]
-                  }
+                  "key_code": "n",
+                  "modifiers": { "mandatory": ["left_option"] }
                 },
                 "to": [
                   {
-                    "key_code": "0",
+                    "key_code": "n",
                     "modifiers": ["left_command"]
                   }
                 ],
@@ -144,7 +186,7 @@
             ]
           },
           {
-            "description": "PLANCK command+m to minimize",
+            "description": "PLANCK + MOONLANDER Command + Z",
             "manipulators": [
               {
                 "conditions": [
@@ -153,6 +195,109 @@
                       {
                         "product_id": 50895,
                         "vendor_id": 12951
+                      },
+                      {
+                        "product_id": 6505,
+                        "vendor_id": 12951
+                      }
+                    ],
+                    "type": "device_if"
+                  }
+                ],
+                "from": {
+                  "key_code": "z",
+                  "modifiers": { "mandatory": ["left_option"] }
+                },
+                "to": [
+                  {
+                    "key_code": "z",
+                    "modifiers": ["left_command"]
+                  }
+                ],
+                "type": "basic"
+              }
+            ]
+          },
+          {
+            "description": "PLANCK + MOONLANDER Command + F",
+            "manipulators": [
+              {
+                "conditions": [
+                  {
+                    "identifiers": [
+                      {
+                        "product_id": 50895,
+                        "vendor_id": 12951
+                      },
+                      {
+                        "product_id": 6505,
+                        "vendor_id": 12951
+                      }
+                    ],
+                    "type": "device_if"
+                  }
+                ],
+                "from": {
+                  "key_code": "f",
+                  "modifiers": { "mandatory": ["left_option"] }
+                },
+                "to": [
+                  {
+                    "key_code": "f",
+                    "modifiers": ["left_command"]
+                  }
+                ],
+                "type": "basic"
+              }
+            ]
+          },
+          {
+            "description": "PLANCK + MOONLANDER command + shift + z",
+            "manipulators": [
+              {
+                "conditions": [
+                  {
+                    "identifiers": [
+                      {
+                        "product_id": 50895,
+                        "vendor_id": 12951
+                      },
+                      {
+                        "product_id": 6505,
+                        "vendor_id": 12951
+                      }
+                    ],
+                    "type": "device_if"
+                  }
+                ],
+                "from": {
+                  "key_code": "z",
+                  "modifiers": { "mandatory": ["left_option", "left_shift"] }
+                },
+                "to": [
+                  {
+                    "key_code": "z",
+                    "modifiers": ["left_command", "left_shift"]
+                  }
+                ],
+                "type": "basic"
+              }
+            ]
+          },
+          {
+            "description": "PLANCK + MOONLANDER command+m to minimize",
+            "manipulators": [
+              {
+                "conditions": [
+                  {
+                    "identifiers": [
+                      {
+                        "product_id": 50895,
+                        "vendor_id": 12951
+                      },
+                      {
+                        "product_id": 6505,
+                        "vendor_id": 12951
                       }
                     ],
                     "type": "device_if"
@@ -160,9 +305,7 @@
                 ],
                 "from": {
                   "key_code": "m",
-                  "modifiers": {
-                    "mandatory": ["left_option"]
-                  }
+                  "modifiers": { "mandatory": ["left_option"] }
                 },
                 "to": [
                   {
@@ -175,7 +318,7 @@
             ]
           },
           {
-            "description": "PLANCK command+option+t toggle Xcode toolbar",
+            "description": "PLANCK + MOONLANDER open VS Code command palette",
             "manipulators": [
               {
                 "conditions": [
@@ -184,21 +327,23 @@
                       {
                         "product_id": 50895,
                         "vendor_id": 12951
+                      },
+                      {
+                        "product_id": 6505,
+                        "vendor_id": 12951
                       }
                     ],
                     "type": "device_if"
                   }
                 ],
                 "from": {
-                  "key_code": "t",
-                  "modifiers": {
-                    "mandatory": ["left_option"]
-                  }
+                  "key_code": "p",
+                  "modifiers": { "mandatory": ["left_control", "left_shift"] }
                 },
                 "to": [
                   {
-                    "key_code": "t",
-                    "modifiers": ["left_command", "left_option"]
+                    "key_code": "p",
+                    "modifiers": ["left_command", "left_shift"]
                   }
                 ],
                 "type": "basic"
@@ -206,7 +351,7 @@
             ]
           },
           {
-            "description": "PLANCK open Brave",
+            "description": "PLANCK + MOONLANDER open Brave",
             "manipulators": [
               {
                 "conditions": [
@@ -214,6 +359,10 @@
                     "identifiers": [
                       {
                         "product_id": 50895,
+                        "vendor_id": 12951
+                      },
+                      {
+                        "product_id": 6505,
                         "vendor_id": 12951
                       }
                     ],
@@ -227,17 +376,40 @@
                     "optional": ["left_command", "left_option"]
                   }
                 },
-                "to": [
-                  {
-                    "shell_command": "open -a 'Brave Browser.app'"
-                  }
-                ],
+                "to": [{ "shell_command": "open -a 'Brave Browser.app'" }],
                 "type": "basic"
               }
             ]
           },
           {
-            "description": "PLANCK open Notes",
+            "description": "Mac open Brave",
+            "manipulators": [
+              {
+                "conditions": [
+                  {
+                    "identifiers": [
+                      {
+                        "product_id": 0,
+                        "vendor_id": 0
+                      }
+                    ],
+                    "type": "device_if"
+                  }
+                ],
+                "from": {
+                  "key_code": "o",
+                  "modifiers": {
+                    "mandatory": ["left_control", "left_shift"],
+                    "optional": ["left_command", "left_option"]
+                  }
+                },
+                "to": [{ "shell_command": "open -a 'Brave Browser.app'" }],
+                "type": "basic"
+              }
+            ]
+          },
+          {
+            "description": "PLANCK + MOONLANDER open Notes",
             "manipulators": [
               {
                 "conditions": [
@@ -245,6 +417,10 @@
                     "identifiers": [
                       {
                         "product_id": 50895,
+                        "vendor_id": 12951
+                      },
+                      {
+                        "product_id": 6505,
                         "vendor_id": 12951
                       }
                     ],
@@ -258,17 +434,40 @@
                     "optional": ["left_command", "left_option"]
                   }
                 },
-                "to": [
-                  {
-                    "shell_command": "open -a 'Notes.app'"
-                  }
-                ],
+                "to": [{ "shell_command": "open -a 'Obsidian.app'" }],
                 "type": "basic"
               }
             ]
           },
           {
-            "description": "PLANCK open VS Code",
+            "description": "Mac open Notes",
+            "manipulators": [
+              {
+                "conditions": [
+                  {
+                    "identifiers": [
+                      {
+                        "product_id": 0,
+                        "vendor_id": 0
+                      }
+                    ],
+                    "type": "device_if"
+                  }
+                ],
+                "from": {
+                  "key_code": "n",
+                  "modifiers": {
+                    "mandatory": ["left_control", "left_shift"],
+                    "optional": ["left_command", "left_option"]
+                  }
+                },
+                "to": [{ "shell_command": "open -a 'Obsidian.app'" }],
+                "type": "basic"
+              }
+            ]
+          },
+          {
+            "description": "PLANCK + MOONLANDER open VS Code",
             "manipulators": [
               {
                 "conditions": [
@@ -276,6 +475,10 @@
                     "identifiers": [
                       {
                         "product_id": 50895,
+                        "vendor_id": 12951
+                      },
+                      {
+                        "product_id": 6505,
                         "vendor_id": 12951
                       }
                     ],
@@ -289,17 +492,40 @@
                     "optional": ["left_command", "left_option"]
                   }
                 },
-                "to": [
-                  {
-                    "shell_command": "open -a 'Visual Studio Code.app'"
-                  }
-                ],
+                "to": [{ "shell_command": "open -a 'Visual Studio Code.app'" }],
                 "type": "basic"
               }
             ]
           },
           {
-            "description": "PLANCK open XCode",
+            "description": "Mac open VS Code",
+            "manipulators": [
+              {
+                "conditions": [
+                  {
+                    "identifiers": [
+                      {
+                        "product_id": 0,
+                        "vendor_id": 0
+                      }
+                    ],
+                    "type": "device_if"
+                  }
+                ],
+                "from": {
+                  "key_code": "k",
+                  "modifiers": {
+                    "mandatory": ["left_control", "left_shift"],
+                    "optional": ["left_command", "left_option"]
+                  }
+                },
+                "to": [{ "shell_command": "open -a 'Visual Studio Code.app'" }],
+                "type": "basic"
+              }
+            ]
+          },
+          {
+            "description": "PLANCK + MOONLANDER close tab/application",
             "manipulators": [
               {
                 "conditions": [
@@ -308,36 +534,9 @@
                       {
                         "product_id": 50895,
                         "vendor_id": 12951
-                      }
-                    ],
-                    "type": "device_if"
-                  }
-                ],
-                "from": {
-                  "key_code": "semicolon",
-                  "modifiers": {
-                    "mandatory": ["left_control", "left_shift"],
-                    "optional": ["left_command", "left_option"]
-                  }
-                },
-                "to": [
-                  {
-                    "shell_command": "open -a 'XCode.app'"
-                  }
-                ],
-                "type": "basic"
-              }
-            ]
-          },
-          {
-            "description": "PLANCK close tab/application",
-            "manipulators": [
-              {
-                "conditions": [
-                  {
-                    "identifiers": [
+                      },
                       {
-                        "product_id": 50895,
+                        "product_id": 6505,
                         "vendor_id": 12951
                       }
                     ],
@@ -346,9 +545,7 @@
                 ],
                 "from": {
                   "key_code": "w",
-                  "modifiers": {
-                    "mandatory": ["left_control"]
-                  }
+                  "modifiers": { "mandatory": ["left_control"] }
                 },
                 "to": [
                   {
@@ -361,7 +558,7 @@
             ]
           },
           {
-            "description": "PLANCK new browser tab",
+            "description": "PLANCK + MOONLANDER new browser tab",
             "manipulators": [
               {
                 "conditions": [
@@ -369,6 +566,10 @@
                     "identifiers": [
                       {
                         "product_id": 50895,
+                        "vendor_id": 12951
+                      },
+                      {
+                        "product_id": 6505,
                         "vendor_id": 12951
                       }
                     ],
@@ -377,14 +578,12 @@
                 ],
                 "from": {
                   "key_code": "t",
-                  "modifiers": {
-                    "mandatory": ["left_control", "left_shift"]
-                  }
+                  "modifiers": { "mandatory": ["left_control", "left_shift"] }
                 },
                 "to": [
                   {
                     "key_code": "t",
-                    "modifiers": ["left_command"]
+                    "modifiers": ["left_command", "left_shift"]
                   }
                 ],
                 "type": "basic"
@@ -392,7 +591,7 @@
             ]
           },
           {
-            "description": "PLANCK block comment",
+            "description": "PLANCK + MOONLANDER block comment",
             "manipulators": [
               {
                 "conditions": [
@@ -401,6 +600,10 @@
                       {
                         "product_id": 50895,
                         "vendor_id": 12951
+                      },
+                      {
+                        "product_id": 6505,
+                        "vendor_id": 12951
                       }
                     ],
                     "type": "device_if"
@@ -408,9 +611,7 @@
                 ],
                 "from": {
                   "key_code": "slash",
-                  "modifiers": {
-                    "mandatory": ["left_control"]
-                  }
+                  "modifiers": { "mandatory": ["left_control"] }
                 },
                 "to": [
                   {
@@ -423,27 +624,7 @@
             ]
           },
           {
-            "description": "UNIVERSAL open in new tab",
-            "manipulators": [
-              {
-                "from": {
-                  "modifiers": {
-                    "mandatory": ["left_control"]
-                  },
-                  "pointing_button": "button1"
-                },
-                "to": [
-                  {
-                    "modifiers": ["left_command"],
-                    "pointing_button": "button1"
-                  }
-                ],
-                "type": "basic"
-              }
-            ]
-          },
-          {
-            "description": "PLANCK copy",
+            "description": "PLANCK + MOONLANDER copy",
             "manipulators": [
               {
                 "conditions": [
@@ -452,6 +633,10 @@
                       {
                         "product_id": 50895,
                         "vendor_id": 12951
+                      },
+                      {
+                        "product_id": 6505,
+                        "vendor_id": 12951
                       }
                     ],
                     "type": "device_if"
@@ -459,9 +644,7 @@
                 ],
                 "from": {
                   "key_code": "c",
-                  "modifiers": {
-                    "mandatory": ["left_control"]
-                  }
+                  "modifiers": { "mandatory": ["left_control"] }
                 },
                 "to": [
                   {
@@ -474,7 +657,7 @@
             ]
           },
           {
-            "description": "PLANCK bold",
+            "description": "PLANCK + MOONLANDER command + s",
             "manipulators": [
               {
                 "conditions": [
@@ -483,98 +666,9 @@
                       {
                         "product_id": 50895,
                         "vendor_id": 12951
-                      }
-                    ],
-                    "type": "device_if"
-                  }
-                ],
-                "from": {
-                  "key_code": "b",
-                  "modifiers": {
-                    "mandatory": ["left_control"]
-                  }
-                },
-                "to": [
-                  {
-                    "key_code": "b",
-                    "modifiers": ["left_command"]
-                  }
-                ],
-                "type": "basic"
-              }
-            ]
-          },
-          {
-            "description": "PLANCK select all",
-            "manipulators": [
-              {
-                "conditions": [
-                  {
-                    "identifiers": [
+                      },
                       {
-                        "product_id": 50895,
-                        "vendor_id": 12951
-                      }
-                    ],
-                    "type": "device_if"
-                  }
-                ],
-                "from": {
-                  "key_code": "a",
-                  "modifiers": {
-                    "mandatory": ["left_control"]
-                  }
-                },
-                "to": [
-                  {
-                    "key_code": "a",
-                    "modifiers": ["left_command"]
-                  }
-                ],
-                "type": "basic"
-              }
-            ]
-          },
-          {
-            "description": "PLANCK paste",
-            "manipulators": [
-              {
-                "conditions": [
-                  {
-                    "identifiers": [
-                      {
-                        "product_id": 50895,
-                        "vendor_id": 12951
-                      }
-                    ],
-                    "type": "device_if"
-                  }
-                ],
-                "from": {
-                  "key_code": "v",
-                  "modifiers": {
-                    "mandatory": ["left_control"]
-                  }
-                },
-                "to": [
-                  {
-                    "key_code": "v",
-                    "modifiers": ["left_command"]
-                  }
-                ],
-                "type": "basic"
-              }
-            ]
-          },
-          {
-            "description": "PLANCK save",
-            "manipulators": [
-              {
-                "conditions": [
-                  {
-                    "identifiers": [
-                      {
-                        "product_id": 50895,
+                        "product_id": 6505,
                         "vendor_id": 12951
                       }
                     ],
@@ -583,9 +677,7 @@
                 ],
                 "from": {
                   "key_code": "s",
-                  "modifiers": {
-                    "mandatory": ["left_control"]
-                  }
+                  "modifiers": { "mandatory": ["left_option"] }
                 },
                 "to": [
                   {
@@ -598,7 +690,7 @@
             ]
           },
           {
-            "description": "PLANCK search entire project",
+            "description": "PLANCK + MOONLANDER new terminal tab",
             "manipulators": [
               {
                 "conditions": [
@@ -607,6 +699,175 @@
                       {
                         "product_id": 50895,
                         "vendor_id": 12951
+                      },
+                      {
+                        "product_id": 6505,
+                        "vendor_id": 12951
+                      }
+                    ],
+                    "type": "device_if"
+                  }
+                ],
+                "from": {
+                  "key_code": "t",
+                  "modifiers": { "mandatory": ["left_option"] }
+                },
+                "to": [
+                  {
+                    "key_code": "t",
+                    "modifiers": ["left_command"]
+                  }
+                ],
+                "type": "basic"
+              }
+            ]
+          },
+          {
+            "description": "PLANCK + MOONLANDER select all",
+            "manipulators": [
+              {
+                "conditions": [
+                  {
+                    "identifiers": [
+                      {
+                        "product_id": 50895,
+                        "vendor_id": 12951
+                      },
+                      {
+                        "product_id": 6505,
+                        "vendor_id": 12951
+                      }
+                    ],
+                    "type": "device_if"
+                  }
+                ],
+                "from": {
+                  "key_code": "a",
+                  "modifiers": { "mandatory": ["left_control"] }
+                },
+                "to": [
+                  {
+                    "key_code": "a",
+                    "modifiers": ["left_command"]
+                  }
+                ],
+                "type": "basic"
+              }
+            ]
+          },
+          {
+            "description": "PLANCK  + MOONLANDER paste",
+            "manipulators": [
+              {
+                "conditions": [
+                  {
+                    "identifiers": [
+                      {
+                        "product_id": 50895,
+                        "vendor_id": 12951
+                      },
+                      {
+                        "product_id": 6505,
+                        "vendor_id": 12951
+                      }
+                    ],
+                    "type": "device_if"
+                  }
+                ],
+                "from": {
+                  "key_code": "v",
+                  "modifiers": { "mandatory": ["left_control"] }
+                },
+                "to": [
+                  {
+                    "key_code": "v",
+                    "modifiers": ["left_command"]
+                  }
+                ],
+                "type": "basic"
+              }
+            ]
+          },
+          {
+            "description": "PLANCK  + MOONLANDER end terminal process (SIGINT)",
+            "manipulators": [
+              {
+                "conditions": [
+                  {
+                    "identifiers": [
+                      {
+                        "product_id": 50895,
+                        "vendor_id": 12951
+                      },
+                      {
+                        "product_id": 6505,
+                        "vendor_id": 12951
+                      }
+                    ],
+                    "type": "device_if"
+                  }
+                ],
+                "from": {
+                  "key_code": "c",
+                  "modifiers": { "mandatory": ["left_option"] }
+                },
+                "to": [
+                  {
+                    "key_code": "c",
+                    "modifiers": ["left_control"]
+                  }
+                ],
+                "type": "basic"
+              }
+            ]
+          },
+          {
+            "description": "PLANCK + MOONLANDER save",
+            "manipulators": [
+              {
+                "conditions": [
+                  {
+                    "identifiers": [
+                      {
+                        "product_id": 50895,
+                        "vendor_id": 12951
+                      },
+                      {
+                        "product_id": 6505,
+                        "vendor_id": 12951
+                      }
+                    ],
+                    "type": "device_if"
+                  }
+                ],
+                "from": {
+                  "key_code": "s",
+                  "modifiers": { "mandatory": ["left_control"] }
+                },
+                "to": [
+                  {
+                    "key_code": "s",
+                    "modifiers": ["left_command"]
+                  }
+                ],
+                "type": "basic"
+              }
+            ]
+          },
+          {
+            "description": "PLANCK + MOONLANDER search entire project",
+            "manipulators": [
+              {
+                "conditions": [
+                  {
+                    "identifiers": [
+                      {
+                        "product_id": 50895,
+                        "vendor_id": 12951
+                      },
+                      {
+                        "product_id": 6505,
+                        "vendor_id": 12951
                       }
                     ],
                     "type": "device_if"
@@ -614,9 +875,7 @@
                 ],
                 "from": {
                   "key_code": "f",
-                  "modifiers": {
-                    "mandatory": ["left_control", "left_shift"]
-                  }
+                  "modifiers": { "mandatory": ["left_control", "left_shift"] }
                 },
                 "to": [
                   {
@@ -629,7 +888,7 @@
             ]
           },
           {
-            "description": "PLANCK hyperlink",
+            "description": "PLANCK + MOONLANDER hyperlink",
             "manipulators": [
               {
                 "conditions": [
@@ -638,6 +897,10 @@
                       {
                         "product_id": 50895,
                         "vendor_id": 12951
+                      },
+                      {
+                        "product_id": 6505,
+                        "vendor_id": 12951
                       }
                     ],
                     "type": "device_if"
@@ -645,9 +908,7 @@
                 ],
                 "from": {
                   "key_code": "k",
-                  "modifiers": {
-                    "mandatory": ["left_control"]
-                  }
+                  "modifiers": { "mandatory": ["left_control"] }
                 },
                 "to": [
                   {
@@ -660,7 +921,7 @@
             ]
           },
           {
-            "description": "PLANCK undo",
+            "description": "PLANCK + MOONLANDER undo",
             "manipulators": [
               {
                 "conditions": [
@@ -669,6 +930,10 @@
                       {
                         "product_id": 50895,
                         "vendor_id": 12951
+                      },
+                      {
+                        "product_id": 6505,
+                        "vendor_id": 12951
                       }
                     ],
                     "type": "device_if"
@@ -676,9 +941,7 @@
                 ],
                 "from": {
                   "key_code": "z",
-                  "modifiers": {
-                    "mandatory": ["left_control"]
-                  }
+                  "modifiers": { "mandatory": ["left_control"] }
                 },
                 "to": [
                   {
@@ -691,7 +954,7 @@
             ]
           },
           {
-            "description": "PLANCK cut",
+            "description": "PLANCK + MOONLANDER cut",
             "manipulators": [
               {
                 "conditions": [
@@ -700,6 +963,10 @@
                       {
                         "product_id": 50895,
                         "vendor_id": 12951
+                      },
+                      {
+                        "product_id": 6505,
+                        "vendor_id": 12951
                       }
                     ],
                     "type": "device_if"
@@ -707,9 +974,7 @@
                 ],
                 "from": {
                   "key_code": "x",
-                  "modifiers": {
-                    "mandatory": ["left_control"]
-                  }
+                  "modifiers": { "mandatory": ["left_control"] }
                 },
                 "to": [
                   {
@@ -722,7 +987,7 @@
             ]
           },
           {
-            "description": "PLANCK command K",
+            "description": "PLANCK + MOONLANDER command K",
             "manipulators": [
               {
                 "conditions": [
@@ -731,6 +996,10 @@
                       {
                         "product_id": 50895,
                         "vendor_id": 12951
+                      },
+                      {
+                        "product_id": 6505,
+                        "vendor_id": 12951
                       }
                     ],
                     "type": "device_if"
@@ -738,9 +1007,7 @@
                 ],
                 "from": {
                   "key_code": "k",
-                  "modifiers": {
-                    "mandatory": ["left_option"]
-                  }
+                  "modifiers": { "mandatory": ["left_option"] }
                 },
                 "to": [
                   {
@@ -753,7 +1020,7 @@
             ]
           },
           {
-            "description": "PLANCK hard refresh",
+            "description": "PLANCK + MOONLANDER hard refresh",
             "manipulators": [
               {
                 "conditions": [
@@ -762,6 +1029,10 @@
                       {
                         "product_id": 50895,
                         "vendor_id": 12951
+                      },
+                      {
+                        "product_id": 6505,
+                        "vendor_id": 12951
                       }
                     ],
                     "type": "device_if"
@@ -769,9 +1040,7 @@
                 ],
                 "from": {
                   "key_code": "r",
-                  "modifiers": {
-                    "mandatory": ["left_control", "left_shift"]
-                  }
+                  "modifiers": { "mandatory": ["left_control", "left_shift"] }
                 },
                 "to": [
                   {
@@ -784,7 +1053,7 @@
             ]
           },
           {
-            "description": "PLANCK XCode modifiers",
+            "description": "PLANCK + MOONLANDER XCode modifiers",
             "manipulators": [
               {
                 "conditions": [
@@ -793,6 +1062,10 @@
                       {
                         "product_id": 50895,
                         "vendor_id": 12951
+                      },
+                      {
+                        "product_id": 6505,
+                        "vendor_id": 12951
                       }
                     ],
                     "type": "device_if"
@@ -800,9 +1073,7 @@
                 ],
                 "from": {
                   "key_code": "l",
-                  "modifiers": {
-                    "mandatory": ["left_control", "left_shift"]
-                  }
+                  "modifiers": { "mandatory": ["left_control", "left_shift"] }
                 },
                 "to": [
                   {
@@ -815,7 +1086,7 @@
             ]
           },
           {
-            "description": "PLANCK highlight whole words forward",
+            "description": "PLANCK + MOONLANDER highlight whole words forward",
             "manipulators": [
               {
                 "conditions": [
@@ -824,6 +1095,10 @@
                       {
                         "product_id": 50895,
                         "vendor_id": 12951
+                      },
+                      {
+                        "product_id": 6505,
+                        "vendor_id": 12951
                       }
                     ],
                     "type": "device_if"
@@ -831,9 +1106,7 @@
                 ],
                 "from": {
                   "key_code": "right_arrow",
-                  "modifiers": {
-                    "mandatory": ["left_control", "left_shift"]
-                  }
+                  "modifiers": { "mandatory": ["left_control", "left_shift"] }
                 },
                 "to": [
                   {
@@ -846,7 +1119,7 @@
             ]
           },
           {
-            "description": "PLANCK highlight whole words backward",
+            "description": "PLANCK + MOONLANDER highlight whole words backward",
             "manipulators": [
               {
                 "conditions": [
@@ -855,6 +1128,10 @@
                       {
                         "product_id": 50895,
                         "vendor_id": 12951
+                      },
+                      {
+                        "product_id": 6505,
+                        "vendor_id": 12951
                       }
                     ],
                     "type": "device_if"
@@ -862,9 +1139,7 @@
                 ],
                 "from": {
                   "key_code": "left_arrow",
-                  "modifiers": {
-                    "mandatory": ["left_control", "left_shift"]
-                  }
+                  "modifiers": { "mandatory": ["left_control", "left_shift"] }
                 },
                 "to": [
                   {
@@ -877,7 +1152,7 @@
             ]
           },
           {
-            "description": "PLANCK highlight whole lines forward",
+            "description": "PLANCK + MOONLANDER highlight whole lines forward",
             "manipulators": [
               {
                 "conditions": [
@@ -886,6 +1161,10 @@
                       {
                         "product_id": 50895,
                         "vendor_id": 12951
+                      },
+                      {
+                        "product_id": 6505,
+                        "vendor_id": 12951
                       }
                     ],
                     "type": "device_if"
@@ -893,9 +1172,7 @@
                 ],
                 "from": {
                   "key_code": "right_arrow",
-                  "modifiers": {
-                    "mandatory": ["left_option"]
-                  }
+                  "modifiers": { "mandatory": ["left_option"] }
                 },
                 "to": [
                   {
@@ -908,7 +1185,7 @@
             ]
           },
           {
-            "description": "PLANCK highlight whole lines backward",
+            "description": "PLANCK + MOONLANDER highlight whole lines backward",
             "manipulators": [
               {
                 "conditions": [
@@ -917,6 +1194,10 @@
                       {
                         "product_id": 50895,
                         "vendor_id": 12951
+                      },
+                      {
+                        "product_id": 6505,
+                        "vendor_id": 12951
                       }
                     ],
                     "type": "device_if"
@@ -924,9 +1205,7 @@
                 ],
                 "from": {
                   "key_code": "left_arrow",
-                  "modifiers": {
-                    "mandatory": ["left_option"]
-                  }
+                  "modifiers": { "mandatory": ["left_option"] }
                 },
                 "to": [
                   {
@@ -939,7 +1218,7 @@
             ]
           },
           {
-            "description": "PLANCK delete whole words",
+            "description": "PLANCK + MOONLANDER delete whole words",
             "manipulators": [
               {
                 "conditions": [
@@ -947,6 +1226,10 @@
                     "identifiers": [
                       {
                         "product_id": 50895,
+                        "vendor_id": 12951
+                      },
+                      {
+                        "product_id": 6505,
                         "vendor_id": 12951
                       }
                     ],
@@ -955,9 +1238,7 @@
                 ],
                 "from": {
                   "key_code": "delete_or_backspace",
-                  "modifiers": {
-                    "mandatory": ["left_control"]
-                  }
+                  "modifiers": { "mandatory": ["left_control"] }
                 },
                 "to": [
                   {
@@ -970,7 +1251,7 @@
             ]
           },
           {
-            "description": "PLANCK jump to beginning of line",
+            "description": "PLANCK + MOONLANDER [TERMINAL] jump to beginning of line",
             "manipulators": [
               {
                 "conditions": [
@@ -979,6 +1260,84 @@
                       {
                         "product_id": 50895,
                         "vendor_id": 12951
+                      },
+                      {
+                        "product_id": 6505,
+                        "vendor_id": 12951
+                      }
+                    ],
+                    "type": "device_if"
+                  },
+                  {
+                    "bundle_identifiers": ["^com.apple.Terminal$"],
+                    "type": "frontmost_application_if"
+                  }
+                ],
+                "from": {
+                  "key_code": "home",
+                  "modifiers": { "mandatory": [] }
+                },
+                "to": [
+                  {
+                    "key_code": "a",
+                    "modifiers": ["left_control"]
+                  }
+                ],
+                "type": "basic"
+              }
+            ]
+          },
+          {
+            "description": "PLANCK + MOONLANDER [TERMINAL] jump to end of line",
+            "manipulators": [
+              {
+                "conditions": [
+                  {
+                    "identifiers": [
+                      {
+                        "product_id": 50895,
+                        "vendor_id": 12951
+                      },
+                      {
+                        "product_id": 6505,
+                        "vendor_id": 12951
+                      }
+                    ],
+                    "type": "device_if"
+                  },
+                  {
+                    "bundle_identifiers": ["^com.apple.Terminal$"],
+                    "type": "frontmost_application_if"
+                  }
+                ],
+                "from": {
+                  "key_code": "end",
+                  "modifiers": { "mandatory": [] }
+                },
+                "to": [
+                  {
+                    "key_code": "e",
+                    "modifiers": ["left_control"]
+                  }
+                ],
+                "type": "basic"
+              }
+            ]
+          },
+          {
+            "description": "PLANCK + MOONLANDER jump to beginning of line",
+            "manipulators": [
+              {
+                "conditions": [
+                  {
+                    "identifiers": [
+                      {
+                        "product_id": 50895,
+                        "vendor_id": 12951
+                      },
+                      {
+                        "product_id": 6505,
+                        "vendor_id": 12951
                       }
                     ],
                     "type": "device_if"
@@ -986,9 +1345,7 @@
                 ],
                 "from": {
                   "key_code": "home",
-                  "modifiers": {
-                    "mandatory": []
-                  }
+                  "modifiers": { "mandatory": [] }
                 },
                 "to": [
                   {
@@ -1001,7 +1358,7 @@
             ]
           },
           {
-            "description": "PLANCK jump to end of line",
+            "description": "PLANCK + MOONLANDER jump to end of line",
             "manipulators": [
               {
                 "conditions": [
@@ -1010,6 +1367,10 @@
                       {
                         "product_id": 50895,
                         "vendor_id": 12951
+                      },
+                      {
+                        "product_id": 6505,
+                        "vendor_id": 12951
                       }
                     ],
                     "type": "device_if"
@@ -1017,9 +1378,7 @@
                 ],
                 "from": {
                   "key_code": "end",
-                  "modifiers": {
-                    "mandatory": []
-                  }
+                  "modifiers": { "mandatory": [] }
                 },
                 "to": [
                   {
@@ -1032,7 +1391,7 @@
             ]
           },
           {
-            "description": "PLANCK highlight address bar",
+            "description": "PLANCK + MOONLANDER highlight address bar",
             "manipulators": [
               {
                 "conditions": [
@@ -1041,6 +1400,10 @@
                       {
                         "product_id": 50895,
                         "vendor_id": 12951
+                      },
+                      {
+                        "product_id": 6505,
+                        "vendor_id": 12951
                       }
                     ],
                     "type": "device_if"
@@ -1048,9 +1411,7 @@
                 ],
                 "from": {
                   "key_code": "d",
-                  "modifiers": {
-                    "mandatory": ["left_option"]
-                  }
+                  "modifiers": { "mandatory": ["left_option"] }
                 },
                 "to": [
                   {
@@ -1063,7 +1424,7 @@
             ]
           },
           {
-            "description": "PLANCK lock screen",
+            "description": "PLANCK + MOONLANDER lock screen",
             "manipulators": [
               {
                 "conditions": [
@@ -1072,6 +1433,10 @@
                       {
                         "product_id": 50895,
                         "vendor_id": 12951
+                      },
+                      {
+                        "product_id": 6505,
+                        "vendor_id": 12951
                       }
                     ],
                     "type": "device_if"
@@ -1079,9 +1444,7 @@
                 ],
                 "from": {
                   "key_code": "l",
-                  "modifiers": {
-                    "mandatory": ["left_option"]
-                  }
+                  "modifiers": { "mandatory": ["left_option"] }
                 },
                 "to": [
                   {
@@ -1094,7 +1457,7 @@
             ]
           },
           {
-            "description": "PLANCK emoji picker",
+            "description": "PLANCK + MOONLANDER emoji picker",
             "manipulators": [
               {
                 "conditions": [
@@ -1103,6 +1466,10 @@
                       {
                         "product_id": 50895,
                         "vendor_id": 12951
+                      },
+                      {
+                        "product_id": 6505,
+                        "vendor_id": 12951
                       }
                     ],
                     "type": "device_if"
@@ -1110,9 +1477,7 @@
                 ],
                 "from": {
                   "key_code": "period",
-                  "modifiers": {
-                    "mandatory": ["left_option"]
-                  }
+                  "modifiers": { "mandatory": ["left_option"] }
                 },
                 "to": [
                   {
@@ -1125,7 +1490,65 @@
             ]
           },
           {
-            "description": "PLANCK open Raycast",
+            "description": "MOONLANDER emoji picker",
+            "manipulators": [
+              {
+                "conditions": [
+                  {
+                    "identifiers": [
+                      {
+                        "product_id": 6505,
+                        "vendor_id": 12951
+                      }
+                    ],
+                    "type": "device_if"
+                  }
+                ],
+                "from": {
+                  "key_code": "period",
+                  "modifiers": { "mandatory": ["left_command"] }
+                },
+                "to": [
+                  {
+                    "key_code": "spacebar",
+                    "modifiers": ["left_command", "left_control"]
+                  }
+                ],
+                "type": "basic"
+              }
+            ]
+          },
+          {
+            "description": "MOONLANDER paste as plantext",
+            "manipulators": [
+              {
+                "conditions": [
+                  {
+                    "identifiers": [
+                      {
+                        "product_id": 6505,
+                        "vendor_id": 12951
+                      }
+                    ],
+                    "type": "device_if"
+                  }
+                ],
+                "from": {
+                  "key_code": "v",
+                  "modifiers": { "mandatory": ["left_shift", "left_control"] }
+                },
+                "to": [
+                  {
+                    "key_code": "v",
+                    "modifiers": ["left_command", "left_shift"]
+                  }
+                ],
+                "type": "basic"
+              }
+            ]
+          },
+          {
+            "description": "PLANCK + MOONLANDER open Raycast",
             "manipulators": [
               {
                 "conditions": [
@@ -1134,6 +1557,10 @@
                       {
                         "product_id": 50895,
                         "vendor_id": 12951
+                      },
+                      {
+                        "product_id": 6505,
+                        "vendor_id": 12951
                       }
                     ],
                     "type": "device_if"
@@ -1141,9 +1568,7 @@
                 ],
                 "from": {
                   "key_code": "spacebar",
-                  "modifiers": {
-                    "mandatory": ["left_option"]
-                  }
+                  "modifiers": { "mandatory": ["left_option"] }
                 },
                 "to": [
                   {
@@ -1172,9 +1597,7 @@
                 ],
                 "from": {
                   "key_code": "period",
-                  "modifiers": {
-                    "mandatory": ["left_command"]
-                  }
+                  "modifiers": { "mandatory": ["left_command"] }
                 },
                 "to": [
                   {
@@ -1203,9 +1626,7 @@
                 ],
                 "from": {
                   "key_code": "d",
-                  "modifiers": {
-                    "mandatory": ["left_command"]
-                  }
+                  "modifiers": { "mandatory": ["left_command"] }
                 },
                 "to": [
                   {
@@ -1234,9 +1655,7 @@
                 ],
                 "from": {
                   "key_code": "l",
-                  "modifiers": {
-                    "mandatory": ["left_command"]
-                  }
+                  "modifiers": { "mandatory": ["left_command"] }
                 },
                 "to": [
                   {
@@ -1252,237 +1671,28 @@
       },
       "devices": [
         {
-          "disable_built_in_keyboard_if_exists": false,
-          "fn_function_keys": [],
-          "game_pad_swap_sticks": false,
-          "identifiers": {
-            "is_game_pad": false,
-            "is_keyboard": true,
-            "is_pointing_device": false,
-            "product_id": 0,
-            "vendor_id": 0
-          },
-          "ignore": false,
-          "manipulate_caps_lock_led": true,
-          "mouse_flip_horizontal_wheel": false,
-          "mouse_flip_vertical_wheel": false,
-          "mouse_flip_x": false,
-          "mouse_flip_y": false,
-          "mouse_swap_wheels": false,
-          "mouse_swap_xy": false,
+          "identifiers": { "is_keyboard": true },
           "simple_modifications": [
             {
-              "from": {
-                "key_code": "caps_lock"
-              },
-              "to": [
-                {
-                  "key_code": "escape"
-                }
-              ]
+              "from": { "key_code": "caps_lock" },
+              "to": [{ "key_code": "escape" }]
             }
-          ],
-          "treat_as_built_in_keyboard": false
+          ]
         },
         {
-          "disable_built_in_keyboard_if_exists": false,
-          "fn_function_keys": [],
-          "game_pad_swap_sticks": false,
           "identifiers": {
-            "is_game_pad": false,
-            "is_keyboard": false,
-            "is_pointing_device": true,
-            "product_id": 0,
-            "vendor_id": 0
-          },
-          "ignore": true,
-          "manipulate_caps_lock_led": false,
-          "mouse_flip_horizontal_wheel": false,
-          "mouse_flip_vertical_wheel": false,
-          "mouse_flip_x": false,
-          "mouse_flip_y": false,
-          "mouse_swap_wheels": false,
-          "mouse_swap_xy": false,
-          "simple_modifications": [],
-          "treat_as_built_in_keyboard": false
-        },
-        {
-          "disable_built_in_keyboard_if_exists": false,
-          "fn_function_keys": [],
-          "game_pad_swap_sticks": false,
-          "identifiers": {
-            "is_game_pad": false,
-            "is_keyboard": false,
             "is_pointing_device": true,
             "product_id": 45108,
             "vendor_id": 1133
           },
-          "ignore": false,
-          "manipulate_caps_lock_led": false,
-          "mouse_flip_horizontal_wheel": false,
-          "mouse_flip_vertical_wheel": false,
-          "mouse_flip_x": false,
-          "mouse_flip_y": false,
-          "mouse_swap_wheels": false,
-          "mouse_swap_xy": false,
-          "simple_modifications": [],
-          "treat_as_built_in_keyboard": false
-        },
-        {
-          "disable_built_in_keyboard_if_exists": false,
-          "fn_function_keys": [],
-          "game_pad_swap_sticks": false,
-          "identifiers": {
-            "is_game_pad": false,
-            "is_keyboard": true,
-            "is_pointing_device": false,
-            "product_id": 50895,
-            "vendor_id": 12951
-          },
-          "ignore": false,
-          "manipulate_caps_lock_led": true,
-          "mouse_flip_horizontal_wheel": false,
-          "mouse_flip_vertical_wheel": false,
-          "mouse_flip_x": false,
-          "mouse_flip_y": false,
-          "mouse_swap_wheels": false,
-          "mouse_swap_xy": false,
-          "simple_modifications": [],
-          "treat_as_built_in_keyboard": false
-        }
-      ],
-      "fn_function_keys": [
-        {
-          "from": {
-            "key_code": "f1"
-          },
-          "to": [
-            {
-              "consumer_key_code": "display_brightness_decrement"
-            }
-          ]
-        },
-        {
-          "from": {
-            "key_code": "f2"
-          },
-          "to": [
-            {
-              "consumer_key_code": "display_brightness_increment"
-            }
-          ]
-        },
-        {
-          "from": {
-            "key_code": "f3"
-          },
-          "to": [
-            {
-              "apple_vendor_keyboard_key_code": "mission_control"
-            }
-          ]
-        },
-        {
-          "from": {
-            "key_code": "f4"
-          },
-          "to": [
-            {
-              "apple_vendor_keyboard_key_code": "spotlight"
-            }
-          ]
-        },
-        {
-          "from": {
-            "key_code": "f5"
-          },
-          "to": [
-            {
-              "consumer_key_code": "dictation"
-            }
-          ]
-        },
-        {
-          "from": {
-            "key_code": "f6"
-          },
-          "to": [
-            {
-              "key_code": "f6"
-            }
-          ]
-        },
-        {
-          "from": {
-            "key_code": "f7"
-          },
-          "to": [
-            {
-              "consumer_key_code": "rewind"
-            }
-          ]
-        },
-        {
-          "from": {
-            "key_code": "f8"
-          },
-          "to": [
-            {
-              "consumer_key_code": "play_or_pause"
-            }
-          ]
-        },
-        {
-          "from": {
-            "key_code": "f9"
-          },
-          "to": [
-            {
-              "consumer_key_code": "fast_forward"
-            }
-          ]
-        },
-        {
-          "from": {
-            "key_code": "f10"
-          },
-          "to": [
-            {
-              "consumer_key_code": "mute"
-            }
-          ]
-        },
-        {
-          "from": {
-            "key_code": "f11"
-          },
-          "to": [
-            {
-              "consumer_key_code": "volume_decrement"
-            }
-          ]
-        },
-        {
-          "from": {
-            "key_code": "f12"
-          },
-          "to": [
-            {
-              "consumer_key_code": "volume_increment"
-            }
-          ]
+          "ignore": false
         }
       ],
       "name": "Default profile",
-      "parameters": {
-        "delay_milliseconds_before_open_device": 1000
-      },
       "selected": true,
-      "simple_modifications": [],
       "virtual_hid_keyboard": {
         "country_code": 0,
-        "indicate_sticky_modifier_keys_state": true,
-        "mouse_key_xy_scale": 100
+        "keyboard_type_v2": "ansi"
       }
     }
   ]
