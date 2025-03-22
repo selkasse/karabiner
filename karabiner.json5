@@ -64,6 +64,23 @@
           },
 
           {
+            description: "Open Chrome",
+            manipulators: [
+              {
+                from: {
+                  key_code: "p",
+                  modifiers: {
+                    mandatory: ["left_control", "left_shift"],
+                    optional: ["left_command", "left_option"],
+                  },
+                },
+                to: [{ shell_command: "open -b 'com.google.Chrome'" }],
+                type: "basic",
+              },
+            ],
+          },
+
+          {
             description: "Mac open Obsidian",
             manipulators: [
               {
@@ -141,9 +158,302 @@
           //* ------------------------------------------------------------------------------------------------
 
           //* ------------------------------------------------------------------------------------------------
-          //? HIGHLIGHT ADDRESS BAR --------------------------------------------------------------------------
+          //? VS CODE ----------------------------------------------------------------------------------------
+          //* ------------------------------------------------------------------------------------------------
+          {
+            description: "PLANCK + MOONLANDER open VS Code file picker",
+            manipulators: [
+              {
+                conditions: [
+                  {
+                    identifiers: [
+                      {
+                        product_id: 50895,
+                        vendor_id: 12951,
+                      },
+                      {
+                        product_id: 6505,
+                        vendor_id: 12951,
+                      },
+                    ],
+                    type: "device_if",
+                  },
+                  {
+                    type: "frontmost_application_if",
+                    bundle_identifiers: ["^com\\.microsoft\\.VSCode$"],
+                  },
+                ],
+                from: {
+                  key_code: "p",
+                  modifiers: { mandatory: ["left_control"] },
+                },
+                to: [
+                  {
+                    key_code: "p",
+                    modifiers: ["left_command"],
+                  },
+                ],
+                type: "basic",
+              },
+            ],
+          },
+          {
+            description: "PLANCK + MOONLANDER open VS Code command palette",
+            manipulators: [
+              {
+                conditions: [
+                  {
+                    identifiers: [
+                      {
+                        product_id: 50895,
+                        vendor_id: 12951,
+                      },
+                      {
+                        product_id: 6505,
+                        vendor_id: 12951,
+                      },
+                    ],
+                    type: "device_if",
+                  },
+                  {
+                    type: "frontmost_application_if",
+                    bundle_identifiers: ["^com\\.microsoft\\.VSCode$"],
+                  },
+                ],
+                from: {
+                  key_code: "p",
+                  modifiers: { mandatory: ["left_option"] },
+                },
+                to: [
+                  {
+                    key_code: "p",
+                    modifiers: ["left_command", "left_shift"],
+                  },
+                ],
+                type: "basic",
+              },
+            ],
+          },
+          {
+            description: "PLANCK + MOONLANDER search entire project",
+            manipulators: [
+              {
+                conditions: [
+                  {
+                    identifiers: [
+                      {
+                        product_id: 50895,
+                        vendor_id: 12951,
+                      },
+                      {
+                        product_id: 6505,
+                        vendor_id: 12951,
+                      },
+                    ],
+                    type: "device_if",
+                  },
+                ],
+                from: {
+                  key_code: "f",
+                  modifiers: { mandatory: ["left_control", "left_shift"] },
+                },
+                to: [
+                  {
+                    key_code: "f",
+                    modifiers: ["left_command", "left_shift"],
+                  },
+                ],
+                type: "basic",
+              },
+            ],
+          },
+          //* ------------------------------------------------------------------------------------------------
+          //? VS CODE ----------------------------------------------------------------------------------------
           //* ------------------------------------------------------------------------------------------------
 
+          //* ------------------------------------------------------------------------------------------------
+          //? OBSIDIAN ---------------------------------------------------------------------------------------
+          //* ------------------------------------------------------------------------------------------------
+          {
+            description: "PLANCK + MOONLANDER Command + ENTER",
+            manipulators: [
+              {
+                conditions: [
+                  {
+                    identifiers: [
+                      {
+                        product_id: 50895,
+                        vendor_id: 12951,
+                      },
+                      {
+                        product_id: 6505,
+                        vendor_id: 12951,
+                      },
+                    ],
+                    type: "device_if",
+                  },
+                ],
+                from: {
+                  key_code: "return_or_enter",
+                  modifiers: { mandatory: ["left_option"] },
+                },
+                to: [
+                  {
+                    key_code: "return_or_enter",
+                    modifiers: ["left_command"],
+                  },
+                ],
+                type: "basic",
+              },
+            ],
+          },
+          {
+            description: "PLANCK + MOONLANDER Option + ENTER",
+            manipulators: [
+              {
+                conditions: [
+                  {
+                    identifiers: [
+                      {
+                        product_id: 50895,
+                        vendor_id: 12951,
+                      },
+                      {
+                        product_id: 6505,
+                        vendor_id: 12951,
+                      },
+                    ],
+                    type: "device_if",
+                  },
+                ],
+                from: {
+                  key_code: "return_or_enter",
+                  modifiers: { mandatory: ["left_option", "left_control"] },
+                },
+                to: [
+                  {
+                    key_code: "return_or_enter",
+                    modifiers: ["left_option"],
+                  },
+                ],
+                type: "basic",
+              },
+            ],
+          },
+          {
+            description: "PLANCK + MOONLANDER Command + O",
+            manipulators: [
+              {
+                conditions: [
+                  {
+                    identifiers: [
+                      {
+                        product_id: 50895,
+                        vendor_id: 12951,
+                      },
+                      {
+                        product_id: 6505,
+                        vendor_id: 12951,
+                      },
+                    ],
+                    type: "device_if",
+                  },
+                ],
+                from: {
+                  key_code: "o",
+                  modifiers: { mandatory: ["left_option"] },
+                },
+                to: [
+                  {
+                    key_code: "o",
+                    modifiers: ["left_command"],
+                  },
+                ],
+                type: "basic",
+              },
+            ],
+          },
+          //* ------------------------------------------------------------------------------------------------
+          //? OBSIDIAN ---------------------------------------------------------------------------------------
+          //* ------------------------------------------------------------------------------------------------
+
+          //* ------------------------------------------------------------------------------------------------
+          //? ZOOM IN / OUT ----------------------------------------------------------------------------------
+          //* ------------------------------------------------------------------------------------------------
+          {
+            description: "PLANCK + MOONLANDER Zoom in",
+            manipulators: [
+              {
+                conditions: [
+                  {
+                    identifiers: [
+                      {
+                        product_id: 50895,
+                        vendor_id: 12951,
+                      },
+                      {
+                        product_id: 6505,
+                        vendor_id: 12951,
+                      },
+                    ],
+                    type: "device_if",
+                  },
+                ],
+                from: {
+                  key_code: "equal_sign",
+                  modifiers: { mandatory: ["left_control"] },
+                },
+                to: [
+                  {
+                    key_code: "equal_sign",
+                    modifiers: ["left_command"],
+                  },
+                ],
+                type: "basic",
+              },
+            ],
+          },
+          {
+            description: "PLANCK + MOONLANDER Zoom out",
+            manipulators: [
+              {
+                conditions: [
+                  {
+                    identifiers: [
+                      {
+                        product_id: 50895,
+                        vendor_id: 12951,
+                      },
+                      {
+                        product_id: 6505,
+                        vendor_id: 12951,
+                      },
+                    ],
+                    type: "device_if",
+                  },
+                ],
+                from: {
+                  key_code: "hyphen",
+                  modifiers: { mandatory: ["left_control"] },
+                },
+                to: [
+                  {
+                    key_code: "hyphen",
+                    modifiers: ["left_command"],
+                  },
+                ],
+                type: "basic",
+              },
+            ],
+          },
+
+          //* ------------------------------------------------------------------------------------------------
+          //? ZOOM IN / OUT ----------------------------------------------------------------------------------
+          //* ------------------------------------------------------------------------------------------------
+
+          //* ------------------------------------------------------------------------------------------------
+          //? HIGHLIGHT ADDRESS BAR --------------------------------------------------------------------------
+          //* ------------------------------------------------------------------------------------------------
           {
             description: "Mac highlight address bar",
             manipulators: [
@@ -251,7 +561,7 @@
           //* ------------------------------------------------------------------------------------------------
 
           //* ------------------------------------------------------------------------------------------------
-          //? SELECT ALL --------------------------------------------------------------------------------
+          //? SELECT ALL -------------------------------------------------------------------------------------
           //* ------------------------------------------------------------------------------------------------
           {
             description: "PLANCK + MOONLANDER select all",
@@ -287,11 +597,11 @@
             ],
           },
           //* ------------------------------------------------------------------------------------------------
-          //? SELECT ALL --------------------------------------------------------------------------------
+          //? SELECT ALL -------------------------------------------------------------------------------------
           //* ------------------------------------------------------------------------------------------------
 
           //* ------------------------------------------------------------------------------------------------
-          //? COPY/PASTE -------------------------------------------------------------------------------------
+          //? COPY/PASTE/CUT/SAVE/HYPERLINK ------------------------------------------------------------------
           //* ------------------------------------------------------------------------------------------------
           {
             description: "PLANCK + MOONLANDER copy",
@@ -333,6 +643,39 @@
             ],
           },
           {
+            description: "PLANCK + MOONLANDER SIGINT",
+            manipulators: [
+              {
+                conditions: [
+                  {
+                    identifiers: [
+                      {
+                        product_id: 50895,
+                        vendor_id: 12951,
+                      },
+                      {
+                        product_id: 6505,
+                        vendor_id: 12951,
+                      },
+                    ],
+                    type: "device_if",
+                  },
+                ],
+                from: {
+                  key_code: "c",
+                  modifiers: { mandatory: ["left_option"] },
+                },
+                to: [
+                  {
+                    key_code: "c",
+                    modifiers: ["left_control"],
+                  },
+                ],
+                type: "basic",
+              },
+            ],
+          },
+          {
             description: "PLANCK  + MOONLANDER paste",
             manipulators: [
               {
@@ -365,8 +708,165 @@
               },
             ],
           },
+          {
+            description: "PLANCK  + MOONLANDER cut",
+            manipulators: [
+              {
+                conditions: [
+                  {
+                    identifiers: [
+                      {
+                        product_id: 50895,
+                        vendor_id: 12951,
+                      },
+                      {
+                        product_id: 6505,
+                        vendor_id: 12951,
+                      },
+                    ],
+                    type: "device_if",
+                  },
+                  {
+                    type: "frontmost_application_unless",
+                    bundle_identifiers: [
+                      "com.mitchellh.ghostty", // Exclude Ghostty
+                    ],
+                  },
+                ],
+                from: {
+                  key_code: "x",
+                  modifiers: { mandatory: ["left_control"] },
+                },
+                to: [
+                  {
+                    key_code: "x",
+                    modifiers: ["left_command"],
+                  },
+                ],
+                type: "basic",
+              },
+            ],
+          },
+          {
+            description: "PLANCK  + MOONLANDER save",
+            manipulators: [
+              {
+                conditions: [
+                  {
+                    identifiers: [
+                      {
+                        product_id: 50895,
+                        vendor_id: 12951,
+                      },
+                      {
+                        product_id: 6505,
+                        vendor_id: 12951,
+                      },
+                    ],
+                    type: "device_if",
+                  },
+                  {
+                    type: "frontmost_application_unless",
+                    bundle_identifiers: [
+                      "com.mitchellh.ghostty", // Exclude Ghostty
+                    ],
+                  },
+                ],
+                from: {
+                  key_code: "s",
+                  modifiers: { mandatory: ["left_control"] },
+                },
+                to: [
+                  {
+                    key_code: "s",
+                    modifiers: ["left_command"],
+                  },
+                ],
+                type: "basic",
+              },
+            ],
+          },
+          {
+            description: "PLANCK  + MOONLANDER hyperlink",
+            manipulators: [
+              {
+                conditions: [
+                  {
+                    identifiers: [
+                      {
+                        product_id: 50895,
+                        vendor_id: 12951,
+                      },
+                      {
+                        product_id: 6505,
+                        vendor_id: 12951,
+                      },
+                    ],
+                    type: "device_if",
+                  },
+                  {
+                    type: "frontmost_application_unless",
+                    bundle_identifiers: [
+                      "com.mitchellh.ghostty", // Exclude Ghostty
+                    ],
+                  },
+                ],
+                from: {
+                  key_code: "k",
+                  modifiers: { mandatory: ["left_control"] },
+                },
+                to: [
+                  {
+                    key_code: "k",
+                    modifiers: ["left_command"],
+                  },
+                ],
+                type: "basic",
+              },
+            ],
+          },
           //* ------------------------------------------------------------------------------------------------
-          //? COPY/PASTE -------------------------------------------------------------------------------------
+          //? COPY/PASTE/CUT/SAVE/HYPERLINK ------------------------------------------------------------------
+          //* ------------------------------------------------------------------------------------------------
+
+          //* ------------------------------------------------------------------------------------------------
+          //? PASTE AS PLAIN TEXT ----------------------------------------------------------------------------
+          //* ------------------------------------------------------------------------------------------------
+          {
+            description: "PLANCK + MOONLANDER paste as plain text",
+            manipulators: [
+              {
+                conditions: [
+                  {
+                    identifiers: [
+                      {
+                        product_id: 50895,
+                        vendor_id: 12951,
+                      },
+                      {
+                        product_id: 6505,
+                        vendor_id: 12951,
+                      },
+                    ],
+                    type: "device_if",
+                  },
+                ],
+                from: {
+                  key_code: "v",
+                  modifiers: { mandatory: ["left_control", "left_shift"] },
+                },
+                to: [
+                  {
+                    key_code: "v",
+                    modifiers: ["left_option", "left_shift", "left_command"],
+                  },
+                ],
+                type: "basic",
+              },
+            ],
+          },
+          //* ------------------------------------------------------------------------------------------------
+          //? PASTE AS PLAIN TEXT ----------------------------------------------------------------------------
           //* ------------------------------------------------------------------------------------------------
 
           //* ------------------------------------------------------------------------------------------------
@@ -439,9 +939,8 @@
           //* ------------------------------------------------------------------------------------------------
 
           //* ------------------------------------------------------------------------------------------------
-          //? JUMP TO BEGINNING/ END OF LINE -----------------------------------------------------------------
+          //? JUMP TO BEGINNING / END OF LINE ----------------------------------------------------------------
           //* ------------------------------------------------------------------------------------------------
-
           {
             description: "PLANCK + MOONLANDER jump to beginning of line",
             manipulators: [
@@ -509,7 +1008,491 @@
             ],
           },
           //* ------------------------------------------------------------------------------------------------
-          //? JUMP TO BEGINNING/ END OF LINE -----------------------------------------------------------------
+          //? JUMP TO BEGINNING / END OF LINE ----------------------------------------------------------------
+          //* ------------------------------------------------------------------------------------------------
+
+          //* ------------------------------------------------------------------------------------------------
+          //? HIGHLIGHT WHOLE WORDS FORWARD / BACK -----------------------------------------------------------
+          //* ------------------------------------------------------------------------------------------------
+          {
+            description: "PLANCK + MOONLANDER highlight whole words forward",
+            manipulators: [
+              {
+                conditions: [
+                  {
+                    identifiers: [
+                      {
+                        product_id: 50895,
+                        vendor_id: 12951,
+                      },
+                      {
+                        product_id: 6505,
+                        vendor_id: 12951,
+                      },
+                    ],
+                    type: "device_if",
+                  },
+                ],
+                from: {
+                  key_code: "right_arrow",
+                  modifiers: { mandatory: ["left_control", "left_shift"] },
+                },
+                to: [
+                  {
+                    key_code: "right_arrow",
+                    modifiers: ["left_option", "left_shift"],
+                  },
+                ],
+                type: "basic",
+              },
+            ],
+          },
+          {
+            description: "PLANCK + MOONLANDER highlight whole words backward",
+            manipulators: [
+              {
+                conditions: [
+                  {
+                    identifiers: [
+                      {
+                        product_id: 50895,
+                        vendor_id: 12951,
+                      },
+                      {
+                        product_id: 6505,
+                        vendor_id: 12951,
+                      },
+                    ],
+                    type: "device_if",
+                  },
+                ],
+                from: {
+                  key_code: "left_arrow",
+                  modifiers: { mandatory: ["left_control", "left_shift"] },
+                },
+                to: [
+                  {
+                    key_code: "left_arrow",
+                    modifiers: ["left_option", "left_shift"],
+                  },
+                ],
+                type: "basic",
+              },
+            ],
+          },
+          //* ------------------------------------------------------------------------------------------------
+          //? HIGHLIGHT WHOLE WORDS FORWARD / BACK -----------------------------------------------------------
+          //* ------------------------------------------------------------------------------------------------
+
+          //* ------------------------------------------------------------------------------------------------
+          //? UNDO / REDO ------------------------------------------------------------------------------------
+          //* ------------------------------------------------------------------------------------------------
+          {
+            description: "PLANCK + MOONLANDER undo",
+            manipulators: [
+              {
+                conditions: [
+                  {
+                    identifiers: [
+                      {
+                        product_id: 50895,
+                        vendor_id: 12951,
+                      },
+                      {
+                        product_id: 6505,
+                        vendor_id: 12951,
+                      },
+                    ],
+                    type: "device_if",
+                  },
+                ],
+                from: {
+                  key_code: "z",
+                  modifiers: { mandatory: ["left_control"] },
+                },
+                to: [
+                  {
+                    key_code: "z",
+                    modifiers: ["left_command"],
+                  },
+                ],
+                type: "basic",
+              },
+            ],
+          },
+          {
+            description: "PLANCK + MOONLANDER redo",
+            manipulators: [
+              {
+                conditions: [
+                  {
+                    identifiers: [
+                      {
+                        product_id: 50895,
+                        vendor_id: 12951,
+                      },
+                      {
+                        product_id: 6505,
+                        vendor_id: 12951,
+                      },
+                    ],
+                    type: "device_if",
+                  },
+                ],
+                from: {
+                  key_code: "z",
+                  modifiers: { mandatory: ["left_control", "left_shift"] },
+                },
+                to: [
+                  {
+                    key_code: "z",
+                    modifiers: ["left_command", "left_shift"],
+                  },
+                ],
+                type: "basic",
+              },
+            ],
+          },
+          //* ------------------------------------------------------------------------------------------------
+          //? UNDO / REDO ------------------------------------------------------------------------------------
+          //* ------------------------------------------------------------------------------------------------
+
+          //* ------------------------------------------------------------------------------------------------
+          //? FIND -------------------------------------------------------------------------------------------
+          //* ------------------------------------------------------------------------------------------------
+          {
+            description: "PLANCK + MOONLANDER find",
+            manipulators: [
+              {
+                conditions: [
+                  {
+                    identifiers: [
+                      {
+                        product_id: 50895,
+                        vendor_id: 12951,
+                      },
+                      {
+                        product_id: 6505,
+                        vendor_id: 12951,
+                      },
+                    ],
+                    type: "device_if",
+                  },
+                ],
+                from: {
+                  key_code: "f",
+                  modifiers: { mandatory: ["left_option"] },
+                },
+                to: [
+                  {
+                    key_code: "f",
+                    modifiers: ["left_command"],
+                  },
+                ],
+                type: "basic",
+              },
+            ],
+          },
+          //* ------------------------------------------------------------------------------------------------
+          //? FIND -------------------------------------------------------------------------------------------
+          //* ------------------------------------------------------------------------------------------------
+
+          //* ------------------------------------------------------------------------------------------------
+          //? MINIMIZE ---------------------------------------------------------------------------------------
+          //* ------------------------------------------------------------------------------------------------
+          {
+            description: "PLANCK + MOONLANDER minimize",
+            manipulators: [
+              {
+                conditions: [
+                  {
+                    identifiers: [
+                      {
+                        product_id: 50895,
+                        vendor_id: 12951,
+                      },
+                      {
+                        product_id: 6505,
+                        vendor_id: 12951,
+                      },
+                    ],
+                    type: "device_if",
+                  },
+                ],
+                from: {
+                  key_code: "m",
+                  modifiers: { mandatory: ["left_control"] },
+                },
+                to: [
+                  {
+                    key_code: "m",
+                    modifiers: ["left_command"],
+                  },
+                ],
+                type: "basic",
+              },
+            ],
+          },
+          //* ------------------------------------------------------------------------------------------------
+          //? MINIMIZE ---------------------------------------------------------------------------------------
+          //* ------------------------------------------------------------------------------------------------
+
+          //* ------------------------------------------------------------------------------------------------
+          //? NEW TAB ----------------------------------------------------------------------------------------
+          //* ------------------------------------------------------------------------------------------------
+          {
+            description: "PLANCK + MOONLANDER new tab",
+            manipulators: [
+              {
+                conditions: [
+                  {
+                    identifiers: [
+                      {
+                        product_id: 50895,
+                        vendor_id: 12951,
+                      },
+                      {
+                        product_id: 6505,
+                        vendor_id: 12951,
+                      },
+                    ],
+                    type: "device_if",
+                  },
+                ],
+                from: {
+                  key_code: "t",
+                  modifiers: { mandatory: ["left_control"] },
+                },
+                to: [
+                  {
+                    key_code: "t",
+                    modifiers: ["left_command"],
+                  },
+                ],
+                type: "basic",
+              },
+            ],
+          },
+          //* ------------------------------------------------------------------------------------------------
+          //? NEW TAB ----------------------------------------------------------------------------------------
+          //* ------------------------------------------------------------------------------------------------
+
+          //* ------------------------------------------------------------------------------------------------
+          //? HARD REFRESH -----------------------------------------------------------------------------------
+          //* ------------------------------------------------------------------------------------------------
+          {
+            description: "PLANCK + MOONLANDER hard refresh",
+            manipulators: [
+              {
+                conditions: [
+                  {
+                    identifiers: [
+                      {
+                        product_id: 50895,
+                        vendor_id: 12951,
+                      },
+                      {
+                        product_id: 6505,
+                        vendor_id: 12951,
+                      },
+                    ],
+                    type: "device_if",
+                  },
+                ],
+                from: {
+                  key_code: "r",
+                  modifiers: { mandatory: ["left_control", "left_shift"] },
+                },
+                to: [
+                  {
+                    key_code: "r",
+                    modifiers: ["left_command", "left_shift"],
+                  },
+                ],
+                type: "basic",
+              },
+            ],
+          },
+          //* ------------------------------------------------------------------------------------------------
+          //? HARD REFRESH -----------------------------------------------------------------------------------
+          //* ------------------------------------------------------------------------------------------------
+
+          //* ------------------------------------------------------------------------------------------------
+          //? RESTORE PREVIOUS TAB ---------------------------------------------------------------------------
+          //* ------------------------------------------------------------------------------------------------
+          {
+            description: "PLANCK + MOONLANDER restore previous browser tab",
+            manipulators: [
+              {
+                conditions: [
+                  {
+                    identifiers: [
+                      {
+                        product_id: 50895,
+                        vendor_id: 12951,
+                      },
+                      {
+                        product_id: 6505,
+                        vendor_id: 12951,
+                      },
+                    ],
+                    type: "device_if",
+                  },
+                ],
+                from: {
+                  key_code: "t",
+                  modifiers: { mandatory: ["left_control", "left_shift"] },
+                },
+                to: [
+                  {
+                    key_code: "t",
+                    modifiers: ["left_command", "left_shift"],
+                  },
+                ],
+                type: "basic",
+              },
+            ],
+          },
+          //* ------------------------------------------------------------------------------------------------
+          //? RESTORE PREVIOUS TAB ---------------------------------------------------------------------------
+          //* ------------------------------------------------------------------------------------------------
+
+          //* ------------------------------------------------------------------------------------------------
+          //? LOCK SCREEN ------------------------------------------------------------------------------------
+          //* ------------------------------------------------------------------------------------------------
+          {
+            description: "PLANCK + MOONLANDER lock screen",
+            manipulators: [
+              {
+                conditions: [
+                  {
+                    identifiers: [
+                      {
+                        product_id: 50895,
+                        vendor_id: 12951,
+                      },
+                      {
+                        product_id: 6505,
+                        vendor_id: 12951,
+                      },
+                    ],
+                    type: "device_if",
+                  },
+                ],
+                from: {
+                  key_code: "l",
+                  modifiers: { mandatory: ["left_option"] },
+                },
+                to: [
+                  {
+                    key_code: "q",
+                    modifiers: ["left_command", "left_control"],
+                  },
+                ],
+                type: "basic",
+              },
+            ],
+          },
+          {
+            description: "Mac lock screen",
+            manipulators: [
+              {
+                conditions: [
+                  {
+                    identifiers: [
+                      {
+                        product_id: 0,
+                        vendor_id: 0,
+                      },
+                    ],
+                    type: "device_if",
+                  },
+                ],
+                from: {
+                  key_code: "l",
+                  modifiers: { mandatory: ["left_command"] },
+                },
+                to: [
+                  {
+                    key_code: "q",
+                    modifiers: ["left_command", "left_control"],
+                  },
+                ],
+                type: "basic",
+              },
+            ],
+          },
+          //* ------------------------------------------------------------------------------------------------
+          //? LOCK SCREEN ------------------------------------------------------------------------------------
+          //* ------------------------------------------------------------------------------------------------
+
+          //* ------------------------------------------------------------------------------------------------
+          //? EMOJI PICKER -----------------------------------------------------------------------------------
+          //* ------------------------------------------------------------------------------------------------
+          {
+            description: "PLANCK + MOONLANDER emoji picker",
+            manipulators: [
+              {
+                conditions: [
+                  {
+                    identifiers: [
+                      {
+                        product_id: 50895,
+                        vendor_id: 12951,
+                      },
+                      {
+                        product_id: 6505,
+                        vendor_id: 12951,
+                      },
+                    ],
+                    type: "device_if",
+                  },
+                ],
+                from: {
+                  key_code: "period",
+                  modifiers: { mandatory: ["left_option"] },
+                },
+                to: [
+                  {
+                    key_code: "spacebar",
+                    modifiers: ["left_command", "left_control"],
+                  },
+                ],
+                type: "basic",
+              },
+            ],
+          },
+          {
+            description: "Mac emoji picker",
+            manipulators: [
+              {
+                conditions: [
+                  {
+                    identifiers: [
+                      {
+                        product_id: 0,
+                        vendor_id: 0,
+                      },
+                    ],
+                    type: "device_if",
+                  },
+                ],
+                from: {
+                  key_code: "period",
+                  modifiers: { mandatory: ["left_command"] },
+                },
+                to: [
+                  {
+                    key_code: "spacebar",
+                    modifiers: ["left_command", "left_control"],
+                  },
+                ],
+                type: "basic",
+              },
+            ],
+          },
+          //* ------------------------------------------------------------------------------------------------
+          //? EMOJI PICKER -----------------------------------------------------------------------------------
           //* ------------------------------------------------------------------------------------------------
         ],
       },
